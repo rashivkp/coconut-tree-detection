@@ -1,0 +1,10 @@
+uploads/*
+!uploads/.gitkeep
+
+*.pyc
+
+static/out/*
+!static/out/.gitkeep
+
+settings.py
+frozen_inference_graph.pb

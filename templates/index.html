@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title> </title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/static/js/jquery.min.js"></script>
+		<script src="/static/js/jquery.dropotron.min.js"></script>
+		<script src="/static/js/jquery.scrollgress.min.js"></script>
+		<script src="/static/js/jquery.scrolly.min.js"></script>
+		<script src="/static/js/skel.min.js"></script>
+		<script src="/static/js/skel-layers.min.js"></script>
+		<script src="/static/js/init.js"></script>
+		<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+		<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/skel.css" />
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/style-xlarge.css" />
+		<noscript>
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="static/css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="static/css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt skel-layers-fixed">
+				<h1>Coconut Tree Counting Project</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="#process">Process</a></li>
+						<li><a href="#samples">Samples</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					<h2>Coconut Tree Detection</h2>
+					<p>works with low resolution pics, around 300-800px</p>
+					<ul class="actions">
+						<li><a href="#process" class="button big scrolly">Process</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="process" class="wrapper style1">
+				<div class="container" style="text-align:center;">
+					<header class="major">
+						<h2>Upload Images</h2>
+						<p>upload images to localize and count coconut trees (jpg/jpeg)</p>
+					</header>
+          <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+              <li class="alert alert-info">{{ message }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <form method="post" action="{{ url_for('hello') }}" enctype="multipart/form-data" >
+
+            <div class="box row">
+              <div class="3u -3u">
+                <input style="display:none;" type="file" name="image" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" />
+                <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+              </div>
+              <div class="1u">
+                <input type="submit" name="submit" id="name" value="Upload">
+              </div>
+						</div>
+					</form>
+				</div>
+			</section>
+      {% if file %}
+			<section id="output" class="wrapper style2">
+				<div class="container">
+					<header class="major">
+            <h2>Coconut Trees Found is {{ count }}</h2>
+						<p> <img src="/static/out/{{ file }}"> </p>
+					</header>
+				</div>
+			</section>
+      {% endif %}
+
+			<section id="samples" class="wrapper style1">
+				<div class="container">
+					<header class="major"> <h2>Output samples</h2></header>
+          <img src="/static/samples/1.jpg">
+          <img src="/static/samples/1_out.jpg">
+          <img src="/static/samples/2.jpg">
+          <img src="/static/samples/2_out.jpg">
+          <img src="/static/samples/3.jpg">
+          <img src="/static/samples/3_out.jpg">
+          <img src="/static/samples/4.jpg">
+          <img src="/static/samples/4_out.jpg">
+          <img src="/static/samples/5.jpg">
+          <img src="/static/samples/5_out.jpg">
+        </div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Envelope</span></a></li>
+				</ul>
+				<ul class="menu">
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<span class="copyright">
+				&copy; Copyright. All rights reserved. Design by <a href="http://www.html5webtemplates.co.uk">Responsive Web Templates</a>
+				</span>
+			</footer>
+
+		<script src="/static/js/jquery.custom-file-input.js"></script>
+	</body>
+</html>

@@ -1,0 +1,6 @@
+class Config(object):
+    DEBUG = True
+    TESTING = True
+    SECRET_KEY = 'change this value'
+    PATH_TO_RESEARCH_FOLDER = '/PATH/TO/models/research'
+    PATH_FROZEN_INFERENCE_GRAPH = 'PATH/TO/frozen_inference_graph.pb'
