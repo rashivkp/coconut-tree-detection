@@ -33,6 +33,8 @@ modify settings.py accordingly.
 - [Train Tensorflow Object Detection on own dataset](https://stackoverflow.com/questions/44973184/train-tensorflow-object-detection-on-own-dataset/44973203#44973203)
 - [How to train your own Object Detector with TensorFlow’s Object Detector API](https://medium.com/towards-data-science/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9)
 - [Tensorflow detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
+- [Commands we used](COMMANDS.md)
+- [Setup script for AWS ami ami-06bfad7c, in eu-east-1](setup.sh)
 
 ## Team Members
 
