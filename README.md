@@ -1,4 +1,4 @@
-# COCONUT WEB
+# [NOT MAINTAINED!!] COCONUT WEB
 
 provide a web interface to trained model to count and localize coconut trees from google satellite imagery.
 
